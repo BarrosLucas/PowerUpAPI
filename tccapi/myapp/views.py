@@ -54,7 +54,7 @@ class TrainingPredictionView(APIView):
 
         input_data = np.array([[age, gender, training_days-1, training_duration, gym_experience, is_natural]])
 
-        path = os.path.join(os.getcwd(), 'myapp\\static\\models')
+        path = os.path.join(os.getcwd(), 'myapp/static/models')
         modelsPath = os.listdir(path)
 
         a = []
@@ -125,7 +125,7 @@ class TrainingPredictionView(APIView):
     def solverPO(self, division, duration, training_days):
         division = self.grantedDaysAmount(division, training_days)
         exercise_train = {}
-        path = os.path.join(os.getcwd(), 'myapp\\static\\solverpo')
+        path = os.path.join(os.getcwd(), 'myapp/static/solverpo')
         exercises = pd.read_csv(f'{path}/exercises.csv')
         duration_exercise = 130
         maxSeriesByMuscleGroup = 12
